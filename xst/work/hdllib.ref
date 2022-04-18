@@ -1,0 +1,16 @@
+EN rom NULL //vboxsvr/sharedfolder/proj_template/ROM.vhd sub00/vhpl14 1650301330
+AR fpga arch_gp_ifc //vboxsvr/sharedfolder/proj_template/fpga.vhd sub00/vhpl06 1650301344
+PB newspaper_pack newspaper_pack //vboxsvr/sharedfolder/projekt1.9/newspaper_pack.vhd sub00/vhpl11 1650301336
+PH newspaper_pack NULL //vboxsvr/sharedfolder/projekt1.9/newspaper_pack.vhd sub00/vhpl10 1650301335
+EN tlv_gp_ifc NULL //vboxsvr/sharedfolder/proj_template/tlv_gp_ifc.vhd sub00/vhpl02 1650301334
+AR column behavioral //vboxsvr/sharedfolder/proj_template/column.vhd sub00/vhpl09 1650301340
+AR tlv_gp_ifc behavioral //vboxsvr/sharedfolder/proj_template/fpga_inst.vhd sub00/vhpl07 1650301345
+EN clkgen NULL //vboxsvr/sharedfolder/proj_template/clkgen.vhd sub00/vhpl03 1650301341
+EN fpga NULL //vboxsvr/sharedfolder/proj_template/fpga.vhd sub00/vhpl05 1650301343
+EN fsm NULL //vboxsvr/sharedfolder/proj_template/FSM.vhd sub00/vhpl12 1650301337
+PH clkgen_cfg NULL //vboxsvr/sharedfolder/proj_template/clkgen_config.vhd sub00/vhpl00 1650301332
+AR rom behavioral //vboxsvr/sharedfolder/proj_template/ROM.vhd sub00/vhpl15 1650301331
+EN column NULL //vboxsvr/sharedfolder/proj_template/column.vhd sub00/vhpl08 1650301339
+AR fsm behavioral //vboxsvr/sharedfolder/proj_template/FSM.vhd sub00/vhpl13 1650301338
+PB clkgen_cfg clkgen_cfg //vboxsvr/sharedfolder/proj_template/clkgen_config.vhd sub00/vhpl01 1650301333
+AR clkgen behavioral //vboxsvr/sharedfolder/proj_template/clkgen.vhd sub00/vhpl04 1650301342

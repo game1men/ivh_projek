@@ -1,0 +1,852 @@
+--------------------------------------------------------------------------------
+Release 13.1 Trace  (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\XilinxISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n 3 -fastpaths
+-xml fpga.twx fpga.ncd -o fpga.twr fpga.pcf -ucf fpga_fitkit.ucf
+
+Design file:              fpga.ncd
+Physical constraint file: fpga.pcf
+Device,package,speed:     xc3s50,pq208,-4 (PRODUCTION 1.39 2011-02-03)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "smclk_x1" PERIOD = 125 ns HIGH 50%;
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is  50.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "smclk_x1" PERIOD = 125 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 75.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 125.000ns
+  Low pulse: 62.500ns
+  Low pulse limit: 25.000ns (Tdcmpw_CLKIN_1_10)
+  Physical resource: DCMclkgen/DCM_INST/CLKIN
+  Logical resource: DCMclkgen/DCM_INST/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: smclk_x1
+--------------------------------------------------------------------------------
+Slack: 75.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 125.000ns
+  High pulse: 62.500ns
+  High pulse limit: 25.000ns (Tdcmpw_CLKIN_1_10)
+  Physical resource: DCMclkgen/DCM_INST/CLKIN
+  Logical resource: DCMclkgen/DCM_INST/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: smclk_x1
+--------------------------------------------------------------------------------
+Slack: 121.430ns (period - min period limit)
+  Period: 125.000ns
+  Min period limit: 3.570ns (280.112MHz) (Tdcmpc)
+  Physical resource: DCMclkgen/DCM_INST/CLKIN
+  Logical resource: DCMclkgen/DCM_INST/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: smclk_x1
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PERIOD analysis for net "DCMclkgen/CLKFX_BUF" derived from  
+NET "smclk_x1" PERIOD = 125 ns HIGH 50%;  divided by 3.57 to 35 nS and duty 
+cycle corrected to HIGH 17.500 nS  
+
+ 24475 paths analyzed, 632 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  12.272ns.
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/q_28 (SLICE_X20Y14.SR), 584 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     22.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_28 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      12.248ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_28
+    -------------------------------------------------  ---------------------------
+    Total                                     12.248ns (6.056ns logic, 6.192ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.247ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_28 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.729ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.COUT     Tbyp                  0.120   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.COUT     Tbyp                  0.120   fpga_inst/q<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.COUT     Tbyp                  0.120   fpga_inst/q<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.CIN     net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.Y       Tciny                 0.923   fpga_inst/q<20>
+                                                       fpga_inst/Madd_q_addsub0000_cy<20>
+                                                       fpga_inst/Madd_q_addsub0000_xor<21>
+    SLICE_X21Y3.F4       net (fanout=1)        0.683   fpga_inst/q_addsub0000<21>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_28
+    -------------------------------------------------  ---------------------------
+    Total                                     11.729ns (6.435ns logic, 5.294ns route)
+                                                       (54.9% logic, 45.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.292ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_1 (FF)
+  Destination:          fpga_inst/q_28 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.684ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_1 to fpga_inst/q_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y0.YQ       Tcko                  0.720   fpga_inst/q<0>
+                                                       fpga_inst/q_1
+    SLICE_X20Y0.G2       net (fanout=3)        0.697   fpga_inst/q<1>
+    SLICE_X20Y0.COUT     Topcyg                1.096   fpga_inst/q<0>
+                                                       fpga_inst/q<1>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.COUT     Tbyp                  0.120   fpga_inst/q<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_28
+    -------------------------------------------------  ---------------------------
+    Total                                     11.684ns (6.176ns logic, 5.508ns route)
+                                                       (52.9% logic, 47.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/q_29 (SLICE_X20Y14.SR), 584 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     22.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_29 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      12.248ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_29
+    -------------------------------------------------  ---------------------------
+    Total                                     12.248ns (6.056ns logic, 6.192ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.247ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_29 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.729ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.COUT     Tbyp                  0.120   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.COUT     Tbyp                  0.120   fpga_inst/q<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.COUT     Tbyp                  0.120   fpga_inst/q<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.CIN     net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.Y       Tciny                 0.923   fpga_inst/q<20>
+                                                       fpga_inst/Madd_q_addsub0000_cy<20>
+                                                       fpga_inst/Madd_q_addsub0000_xor<21>
+    SLICE_X21Y3.F4       net (fanout=1)        0.683   fpga_inst/q_addsub0000<21>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_29
+    -------------------------------------------------  ---------------------------
+    Total                                     11.729ns (6.435ns logic, 5.294ns route)
+                                                       (54.9% logic, 45.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.292ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_1 (FF)
+  Destination:          fpga_inst/q_29 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.684ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_1 to fpga_inst/q_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y0.YQ       Tcko                  0.720   fpga_inst/q<0>
+                                                       fpga_inst/q_1
+    SLICE_X20Y0.G2       net (fanout=3)        0.697   fpga_inst/q<1>
+    SLICE_X20Y0.COUT     Topcyg                1.096   fpga_inst/q<0>
+                                                       fpga_inst/q<1>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.COUT     Tbyp                  0.120   fpga_inst/q<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y14.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y14.CLK     Tsrck                 1.026   fpga_inst/q<28>
+                                                       fpga_inst/q_29
+    -------------------------------------------------  ---------------------------
+    Total                                     11.684ns (6.176ns logic, 5.508ns route)
+                                                       (52.9% logic, 47.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/q_30 (SLICE_X20Y15.SR), 584 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     22.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_30 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      12.248ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y15.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y15.CLK     Tsrck                 1.026   fpga_inst/q<30>
+                                                       fpga_inst/q_30
+    -------------------------------------------------  ---------------------------
+    Total                                     12.248ns (6.056ns logic, 6.192ns route)
+                                                       (49.4% logic, 50.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.247ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_3 (FF)
+  Destination:          fpga_inst/q_30 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.729ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_3 to fpga_inst/q_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y1.YQ       Tcko                  0.720   fpga_inst/q<2>
+                                                       fpga_inst/q_3
+    SLICE_X20Y1.G3       net (fanout=3)        1.381   fpga_inst/q<3>
+    SLICE_X20Y1.COUT     Topcyg                1.096   fpga_inst/q<2>
+                                                       fpga_inst/q<3>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.COUT     Tbyp                  0.120   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<14>
+                                                       fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<15>
+    SLICE_X20Y8.COUT     Tbyp                  0.120   fpga_inst/q<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<16>
+                                                       fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<17>
+    SLICE_X20Y9.COUT     Tbyp                  0.120   fpga_inst/q<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<18>
+                                                       fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.CIN     net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<19>
+    SLICE_X20Y10.Y       Tciny                 0.923   fpga_inst/q<20>
+                                                       fpga_inst/Madd_q_addsub0000_cy<20>
+                                                       fpga_inst/Madd_q_addsub0000_xor<21>
+    SLICE_X21Y3.F4       net (fanout=1)        0.683   fpga_inst/q_addsub0000<21>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y15.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y15.CLK     Tsrck                 1.026   fpga_inst/q<30>
+                                                       fpga_inst/q_30
+    -------------------------------------------------  ---------------------------
+    Total                                     11.729ns (6.435ns logic, 5.294ns route)
+                                                       (54.9% logic, 45.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     23.292ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fpga_inst/q_1 (FF)
+  Destination:          fpga_inst/q_30 (FF)
+  Requirement:          35.000ns
+  Data Path Delay:      11.684ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.024ns (0.229 - 0.253)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: fpga_inst/q_1 to fpga_inst/q_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y0.YQ       Tcko                  0.720   fpga_inst/q<0>
+                                                       fpga_inst/q_1
+    SLICE_X20Y0.G2       net (fanout=3)        0.697   fpga_inst/q<1>
+    SLICE_X20Y0.COUT     Topcyg                1.096   fpga_inst/q<0>
+                                                       fpga_inst/q<1>_rt
+                                                       fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<1>
+    SLICE_X20Y1.COUT     Tbyp                  0.120   fpga_inst/q<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<2>
+                                                       fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<3>
+    SLICE_X20Y2.COUT     Tbyp                  0.120   fpga_inst/q<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<4>
+                                                       fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<5>
+    SLICE_X20Y3.COUT     Tbyp                  0.120   fpga_inst/q<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<6>
+                                                       fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<7>
+    SLICE_X20Y4.COUT     Tbyp                  0.120   fpga_inst/q<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<8>
+                                                       fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<9>
+    SLICE_X20Y5.COUT     Tbyp                  0.120   fpga_inst/q<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<10>
+                                                       fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<11>
+    SLICE_X20Y6.COUT     Tbyp                  0.120   fpga_inst/q<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<12>
+                                                       fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.CIN      net (fanout=1)        0.000   fpga_inst/Madd_q_addsub0000_cy<13>
+    SLICE_X20Y7.X        Tcinx                 0.904   fpga_inst/q<14>
+                                                       fpga_inst/Madd_q_addsub0000_xor<14>
+    SLICE_X21Y3.F1       net (fanout=1)        1.581   fpga_inst/q_addsub0000<14>
+    SLICE_X21Y3.X        Tilo                  0.551   fpga_inst/q_cmp_eq0000346
+                                                       fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.F2      net (fanout=1)        0.883   fpga_inst/q_cmp_eq0000346
+    SLICE_X21Y10.X       Tilo                  0.551   fpga_inst/q_cmp_eq0000384
+                                                       fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.F2       net (fanout=1)        0.864   fpga_inst/q_cmp_eq0000384
+    SLICE_X22Y6.X        Tilo                  0.608   fpga_inst/q_cmp_eq0000
+                                                       fpga_inst/q_cmp_eq0000476
+    SLICE_X20Y15.SR      net (fanout=16)       1.483   fpga_inst/q_cmp_eq0000
+    SLICE_X20Y15.CLK     Tsrck                 1.026   fpga_inst/q<30>
+                                                       fpga_inst/q_30
+    -------------------------------------------------  ---------------------------
+    Total                                     11.684ns (6.176ns logic, 5.508ns route)
+                                                       (52.9% logic, 47.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: PERIOD analysis for net "DCMclkgen/CLKFX_BUF" derived from
+ NET "smclk_x1" PERIOD = 125 ns HIGH 50%;
+ divided by 3.57 to 35 nS and duty cycle corrected to HIGH 17.500 nS 
+
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/A_0 (SLICE_X7Y30.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.843ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               fpga_inst/A_0 (FF)
+  Destination:          fpga_inst/A_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.843ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 35.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: fpga_inst/A_0 to fpga_inst/A_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y30.XQ       Tcko                  0.576   fpga_inst/A<0>
+                                                       fpga_inst/A_0
+    SLICE_X7Y30.BX       net (fanout=5)        0.550   fpga_inst/A<0>
+    SLICE_X7Y30.CLK      Tckdi       (-Th)     0.283   fpga_inst/A<0>
+                                                       fpga_inst/A_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.843ns (0.293ns logic, 0.550ns route)
+                                                       (34.8% logic, 65.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/rot_0 (SLICE_X21Y17.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.864ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               fpga_inst/rot_0 (FF)
+  Destination:          fpga_inst/rot_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.864ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 35.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: fpga_inst/rot_0 to fpga_inst/rot_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y17.XQ      Tcko                  0.576   fpga_inst/rot<0>
+                                                       fpga_inst/rot_0
+    SLICE_X21Y17.BX      net (fanout=7)        0.571   fpga_inst/rot<0>
+    SLICE_X21Y17.CLK     Tckdi       (-Th)     0.283   fpga_inst/rot<0>
+                                                       fpga_inst/rot_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.864ns (0.293ns logic, 0.571ns route)
+                                                       (33.9% logic, 66.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point fpga_inst/FSM/arr_110 (SLICE_X15Y26.G4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.953ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               fpga_inst/FSM/arr_110 (FF)
+  Destination:          fpga_inst/FSM/arr_110 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.953ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 35.000ns
+  Destination Clock:    clk rising at 35.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: fpga_inst/FSM/arr_110 to fpga_inst/FSM/arr_110
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y26.YQ      Tcko                  0.576   fpga_inst/FSM/arr<110>
+                                                       fpga_inst/FSM/arr_110
+    SLICE_X15Y26.G4      net (fanout=3)        0.316   fpga_inst/FSM/arr<110>
+    SLICE_X15Y26.CLK     Tckg        (-Th)    -0.061   fpga_inst/FSM/arr<110>
+                                                       fpga_inst/FSM/arr_mux0000<110>11
+                                                       fpga_inst/FSM/arr_110
+    -------------------------------------------------  ---------------------------
+    Total                                      0.953ns (0.637ns logic, 0.316ns route)
+                                                       (66.8% logic, 33.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: PERIOD analysis for net "DCMclkgen/CLKFX_BUF" derived from
+ NET "smclk_x1" PERIOD = 125 ns HIGH 50%;
+ divided by 3.57 to 35 nS and duty cycle corrected to HIGH 17.500 nS 
+
+--------------------------------------------------------------------------------
+Slack: 20.557ns (max period limit - period)
+  Period: 35.000ns
+  Max period limit: 55.557ns (18.000MHz) (Tdcmpfx)
+  Physical resource: DCMclkgen/DCM_INST/CLKFX
+  Logical resource: DCMclkgen/DCM_INST/CLKFX
+  Location pin: DCM_X0Y0.CLKFX
+  Clock network: DCMclkgen/CLKFX_BUF
+--------------------------------------------------------------------------------
+Slack: 30.239ns (period - min period limit)
+  Period: 35.000ns
+  Min period limit: 4.761ns (210.040MHz) (Tdcmpfx)
+  Physical resource: DCMclkgen/DCM_INST/CLKFX
+  Logical resource: DCMclkgen/DCM_INST/CLKFX
+  Location pin: DCM_X0Y0.CLKFX
+  Clock network: DCMclkgen/CLKFX_BUF
+--------------------------------------------------------------------------------
+Slack: 33.428ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 35.000ns
+  Low pulse: 17.500ns
+  Low pulse limit: 0.786ns (Tcl)
+  Physical resource: fpga_inst/q<0>/CLK
+  Logical resource: fpga_inst/q_0/CK
+  Location pin: SLICE_X20Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for smclk_x1
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|smclk_x1                       |    125.000ns|     50.000ns|     43.829ns|            0|            0|            0|        24475|
+| DCMclkgen/CLKFX_BUF           |     35.000ns|     12.272ns|          N/A|            0|            0|        24475|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock SMCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SMCLK          |   12.272|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 24475 paths, 0 nets, and 1050 connections
+
+Design statistics:
+   Minimum period:  50.000ns{1}   (Maximum frequency:  20.000MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Apr 18 19:04:06 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 88 MB
+
+
+

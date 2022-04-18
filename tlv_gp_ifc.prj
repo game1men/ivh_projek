@@ -1,0 +1,5 @@
+vhdl work "tlv_gp_ifc.vhd"
+vhdl work "FSM.vhd"
+vhdl work "column.vhd"
+vhdl work "../projekt1.9/newspaper_pack.vhd"
+vhdl work "fpga_inst.vhd"

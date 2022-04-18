@@ -1,0 +1,54 @@
+V3 32
+FL //vboxsvr/sharedfolder/projekt1.9/newspaper_pack.vhd 2022/04/17.17:18:49 O.40d
+PH work/newspaper_pack 1650301335 \
+      FL //vboxsvr/sharedfolder/projekt1.9/newspaper_pack.vhd \
+      PB ieee/std_logic_1164 1296775758
+PB work/newspaper_pack 1650301336 \
+      FL //vboxsvr/sharedfolder/projekt1.9/newspaper_pack.vhd \
+      PH work/newspaper_pack 1650301335
+FL //vboxsvr/sharedfolder/proj_template/clkgen.vhd 2022/03/23.14:43:33 O.40d
+EN work/clkgen 1650301341 FL //vboxsvr/sharedfolder/proj_template/clkgen.vhd \
+      PB ieee/std_logic_1164 1296775758 PB ieee/NUMERIC_STD 1296775759 \
+      PB work/clkgen_cfg 1650301333 LB UNISIM PH unisim/VCOMPONENTS 1296775759
+AR work/clkgen/BEHAVIORAL 1650301342 \
+      FL //vboxsvr/sharedfolder/proj_template/clkgen.vhd EN work/clkgen 1650301341 \
+      CP BUFG CP IBUFG CP DCM
+FL //vboxsvr/sharedfolder/proj_template/clkgen_config.vhd 2022/03/23.14:43:33 O.40d
+PH work/clkgen_cfg 1650301332 \
+      FL //vboxsvr/sharedfolder/proj_template/clkgen_config.vhd \
+      PB ieee/std_logic_1164 1296775758 PB ieee/std_logic_arith 1296775759
+PB work/clkgen_cfg 1650301333 \
+      FL //vboxsvr/sharedfolder/proj_template/clkgen_config.vhd \
+      PH work/clkgen_cfg 1650301332
+FL //vboxsvr/sharedfolder/proj_template/column.vhd 2022/04/17.16:51:52 O.40d
+EN work/column 1650301339 FL //vboxsvr/sharedfolder/proj_template/column.vhd \
+      PB ieee/std_logic_1164 1296775758
+AR work/column/Behavioral 1650301340 \
+      FL //vboxsvr/sharedfolder/proj_template/column.vhd EN work/column 1650301339
+FL //vboxsvr/sharedfolder/proj_template/fpga.vhd 2022/03/23.14:43:33 O.40d
+EN work/fpga 1650301343 FL //vboxsvr/sharedfolder/proj_template/fpga.vhd \
+      PB ieee/std_logic_1164 1296775758 PB work/clkgen_cfg 1650301333
+AR work/fpga/arch_gp_ifc 1650301344 \
+      FL //vboxsvr/sharedfolder/proj_template/fpga.vhd EN work/fpga 1650301343 \
+      CP work/clkgen CP tlv_gp_ifc
+FL //vboxsvr/sharedfolder/proj_template/fpga_inst.vhd 2022/04/18.19:01:17 O.40d
+AR work/tlv_gp_ifc/Behavioral 1650301345 \
+      FL //vboxsvr/sharedfolder/proj_template/fpga_inst.vhd EN work/tlv_gp_ifc 1650301334 \
+      PB ieee/std_logic_1164 1296775758 PB ieee/STD_LOGIC_UNSIGNED 1296775760 \
+      PB work/newspaper_pack 1650301336 EN work/column 1650301339 \
+      AR work/FSM/Behavioral 1650301338 CP work/column
+FL //vboxsvr/sharedfolder/proj_template/FSM.vhd 2022/04/18.19:01:48 O.40d
+EN work/FSM 1650301337 FL //vboxsvr/sharedfolder/proj_template/FSM.vhd \
+      PB ieee/std_logic_1164 1296775758 PB ieee/STD_LOGIC_UNSIGNED 1296775760
+AR work/FSM/Behavioral 1650301338 \
+      FL //vboxsvr/sharedfolder/proj_template/FSM.vhd EN work/FSM 1650301337 \
+      AR work/ROM/Behavioral 1650301331
+FL //vboxsvr/sharedfolder/proj_template/ROM.vhd 2022/04/18.18:45:02 O.40d
+EN work/ROM 1650301330 FL //vboxsvr/sharedfolder/proj_template/ROM.vhd \
+      PB ieee/std_logic_1164 1296775758
+AR work/ROM/Behavioral 1650301331 \
+      FL //vboxsvr/sharedfolder/proj_template/ROM.vhd EN work/ROM 1650301330
+FL //vboxsvr/sharedfolder/proj_template/tlv_gp_ifc.vhd 2022/03/23.14:43:33 O.40d
+EN work/tlv_gp_ifc 1650301334 \
+      FL //vboxsvr/sharedfolder/proj_template/tlv_gp_ifc.vhd \
+      PB ieee/std_logic_1164 1296775758
